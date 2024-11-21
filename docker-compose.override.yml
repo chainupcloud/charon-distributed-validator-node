@@ -50,12 +50,15 @@ services:
     #ports:
       #- 5064:5064 # Metrics
 
-  #prometheus:
+  prometheus:
     # Disable prometheus
-    #profiles: [disable]
+    profiles: [disable]
     # Bind prometheus internal ports to host ports
     #ports:
       #- 9090:9090 # Metrics
+
+  grafana:
+    profiles: [disable]
 
   mev-boost:
     # Disable mev-boost
