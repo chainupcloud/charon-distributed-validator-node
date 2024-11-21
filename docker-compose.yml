@@ -96,6 +96,7 @@ services:
     networks: [dvnode]
     volumes:
       - .charon:/opt/charon/.charon
+      - /etc/ssl/certs/nes.pem:/etc/ssl/certs/nes.pem
     restart: unless-stopped
     healthcheck:
       test: wget -qO- http://localhost:3620/readyz
@@ -120,6 +121,7 @@ services:
       - ./lodestar/run.sh:/opt/lodestar/run.sh
       - .charon/validator_keys:/home/charon/validator_keys
       - ./data/lodestar:/opt/data
+      - /etc/ssl/certs/nes.pem:/etc/ssl/certs/nes.pem
     restart: unless-stopped
 
   #                             _                     _
